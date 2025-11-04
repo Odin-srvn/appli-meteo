@@ -30,8 +30,8 @@ async function chargerMeteo() {
 </script>
 
 <template>
-  <div class="container py-4">
-    <h1 class="text-center mb-4">🌦️ Météo — Gironde</h1>
+  <div class="container">
+    <h1 class="">🌦️ Météo — Gironde</h1>
 
     <form class="d-flex flex-column align-items-center gap-2" @submit.prevent>
       <label for="ville" class="form-label">Choisir une ville :</label>
