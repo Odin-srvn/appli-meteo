@@ -30,38 +30,36 @@ async function chargerMeteo() {
 </script>
 
 <template>
-  <div class="container">
-    <h1 class="">🌦️ Météo — Gironde</h1>
+  <div class="app-container">
+    <h1 >🌦️ Météo — Gironde</h1>
 
-    <form class="d-flex flex-column align-items-center gap-2" @submit.prevent>
-      <label for="ville" class="form-label">Choisir une ville :</label>
-      <div class="d-flex gap-2">
-        <select id="ville" v-model="ville" class="form-select w-auto">
+    <form class="meteo-form" @submit.prevent>
+      <label for="ville">Choisir une ville :</label>
+      <div class="form-group">
+        <select id="ville" v-model="ville">
           <option v-for="v in villes" :key="v.code" :value="v.code">{{ v.nom }}</option>
         </select>
-        <button type="button" class="btn btn-primary" @click="chargerMeteo">Charger</button>
+        <button type="button" @click="chargerMeteo">Charger</button>
       </div>
     </form>
 
     <div class="mt-4">
-      <div v-if="loading" class="alert alert-secondary">Chargement...</div>
-      <div v-else-if="error" class="alert alert-danger">Erreur : {{ error }}</div>
+      <div v-if="loading" class="alert info"> Chargement...</div>
+      <div v-else-if="error" class="alert error"> Erreur : {{ error }}</div>
 
       <div v-else-if="meteo">
-        <div class="text-center mb-3">
+        <div class="current">
           <h2>{{ meteo.city }}</h2>
           <p>{{ meteo.current.condition }} — {{ meteo.current.tmp }}°C</p>
           <img :src="meteo.current.icon" alt="meteo actuelle" width="64" height="64" />
         </div>
 
-        <section class="row g-3">
-          <div v-for="j in meteo.days" :key="j.day_long" class="col-12 col-md-4">
-            <div class="card p-3 text-center">
+        <section class="forecast">
+          <div v-for="j in meteo.days" :key="j.day_long" class="day-card">
               <h5>{{ j.day_long }}</h5>
               <img :src="j.icon" :alt="j.condition" width="64" height="64" />
               <p>{{ j.tmin }}°C / {{ j.tmax }}°C</p>
-              <p class="text-muted">{{ j.condition }}</p>
-            </div>
+             <p class="condition">{{ j.condition }}</p>
           </div>
         </section>
       </div>
