@@ -1,0 +1,17 @@
+//   Mixins utilitaires
+@use "sass:map";
+
+@mixin font-config($map) {
+  font-size: map.get($map, size);
+  font-family: map.get($map, family);
+  color: map.get($map, color);
+}
+
+@mixin clamp-size($min, $pref, $max){
+    font-size: clamp($min, $pref, $max);
+}
+
+@mixin focus-ring{
+    outline: 3px solid rgba(30, 144, 255, .45);
+    outline-offset: 2px;
+}
