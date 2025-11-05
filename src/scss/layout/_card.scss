@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "../abstract" as *;
+
+.forecast {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+
+    .day-card {
+
+        width: 450px;
+        height: 300px;
+        border-radius: 12px;
+        background-color: $card;
+        padding: 20px;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 14px;
+
+        box-shadow: 0px 1px 1.5px;
+        color: $text-color;
+
+        img {
+            align-self: center;
+
+            &:hover {
+                transform: scale(1.07);
+            }
+        }
+
+        h5 {
+            @include font-config($day);
+            font-size: map.get($day, size);
+        }
+
+    }
+
+}

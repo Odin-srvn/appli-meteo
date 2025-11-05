@@ -44,7 +44,7 @@ async function chargerMeteo() {
       </div>
     </form>
 
-    <div class="mt-4">
+    <div class="">
       <div v-if="loading" class="alert info"> Chargement...</div>
       <div v-else-if="error" class="alert error"> Erreur : {{ error }}</div>
 
@@ -66,4 +66,5 @@ async function chargerMeteo() {
       </div>
     </div>
   </div>
+  
 </template>
