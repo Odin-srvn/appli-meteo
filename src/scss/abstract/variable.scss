@@ -7,20 +7,24 @@ $text-color: #10242C;
 
 $city-banner: (
     size: 32px,
-    family: 'Montserrat', sans-serif
-    color: $text-color );
+    family: 'Montserrat', sans-serif,
+    color: $text-color 
+);
 
 $day: (
-    size: 28px ,
-    family: 'Instrument', sans-serif
-    color: $text-color);
+    size: 28px,
+    family: 'Instrument', sans-serif,
+    color: $text-color
+);
     
 $weather: (
-    size:24px,
-    family: 'Instrument', sans-serif
-    color: $text-color);
+    size: 24px,
+    family: 'Instrument', sans-serif,
+    color: $text-color
+);
 
 $text-footer: (
-    size: 20 
-    family: 'Instrument', sans-serif
-    color: $text-color-footer,);
+    size: 20px,
+    family: 'Instrument', sans-serif,
+    color: $text-color-footer
+);
