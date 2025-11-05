@@ -1,3 +1,5 @@
+@use "../abstract" as *;
+
 @font-face {
     font-family: Montserrat;
     src: url(/public/css/font/Montserrat-VariableFont_wght.ttf);
@@ -6,4 +8,8 @@
 @font-face {
     font-family: Instrument;
     src: url(/public/css/font/InstrumentSans-VariableFont_wdth\,wght.ttf);
+}
+
+.city-banner {
+    @include font-config($city-banner);
 }
