@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { fetchMeteo } from "./services/meteo.js";
 
+
 const villes = [
   { code: "bordeaux", nom: "Bordeaux" },
   { code: "arcachon", nom: "Arcachon" },
