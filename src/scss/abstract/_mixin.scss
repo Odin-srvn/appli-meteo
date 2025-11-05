@@ -1,0 +1,10 @@
+//   Mixins utilitaires
+
+@mixin clamp-size($min, $pref, $max){
+    font-size: clamp($min, $pref, $max);
+}
+
+@mixin focus-ring{
+    outline: 3px solid rgba(30, 144, 255, .45);
+    outline-offset: 2px;
+}
