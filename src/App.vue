@@ -50,7 +50,7 @@ async function chargerMeteo() {
 
       <div v-else-if="meteo">
         <div class="current">
-          <h2>{{ meteo.city }}</h2>
+          <h2 class="city-banner">{{ meteo.city }}</h2>
           <p>{{ meteo.current.condition }} — {{ meteo.current.tmp }}°C</p>
           <img :src="meteo.current.icon" alt="meteo actuelle" width="64" height="64" />
         </div>
