@@ -15,8 +15,19 @@
 }
 
 body {
-  background-color: 0;
-  padding-bottom: 0;
+  margin: 0;
+}
+
+#header {
+  height: 150px;
+  background-color: #335A52;
+}
+
+.logo {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
