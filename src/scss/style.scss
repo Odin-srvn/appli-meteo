@@ -1,0 +1,30 @@
+@import 
+    'abstract/fonction.scss',
+    'abstract/mixin.scss',
+    'abstract/placeholder.scss',
+    'abstract/variable.scss';
+ 
+@import
+    'base/typography.scss';
+
+@import
+    'layout/banner.scss',
+    'layout/card.scss',
+    'layout/footer.scss',
+    'layout/header.scss';
+
+@import
+    'pages/about.scss',
+    'pages/home.scss',
+    'pages/legal.scss';
+
+
+
+
+body{
+    background-color: blue($color: #000000);
+    padding-bottom: 0;
+}
+.btn{
+    background-color: #000000;
+}
