@@ -1,24 +1,10 @@
-@import 
-    'abstract/fonction.scss',
-    'abstract/mixin.scss',
-    'abstract/placeholder.scss',
-    'abstract/variable.scss';
- 
-@import
-    'base/typography.scss';
+@use "abstract" as *;
+@use "base" as *;
+@use "layout" as *;
 
-@import
-    'layout/banner.scss',
-    'layout/card.scss',
-    'layout/footer.scss',
-    'layout/header.scss';
-
-@import
-    'pages/about.scss',
-    'pages/home.scss',
-    'pages/legal.scss';
-
-
+body{
+    padding-bottom: 0;
+}
 .btn{
     background-color: #000000;
 }
