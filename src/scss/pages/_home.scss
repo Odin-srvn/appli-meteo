@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "../abstract" as *;
+
+
+
+#app{
+    background-color: $background-color;
+}
