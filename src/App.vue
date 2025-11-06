@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { fetchMeteo } from "./services/meteo.js";
 
 
@@ -27,7 +27,9 @@ async function chargerMeteo() {
   } finally {
     loading.value = false;
   }
-}
+} 
+chargerMeteo();
+watch(ville, chargerMeteo);
 </script>
 
 <template>
