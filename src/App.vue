@@ -29,7 +29,7 @@ async function chargerMeteo() {
   }
 } 
 chargerMeteo();
-watch(ville, chargerMeteo);
+watch(ville, chargerMeteo)
 </script>
 
 <template>
@@ -44,7 +44,7 @@ watch(ville, chargerMeteo);
   <div class="app-container">
     <div class="banner">
         <h1>
-            <span class="title">Bordeaux</span>
+            <span class="title">{{ ville.charAt(0).toUpperCase() + ville.slice(1) }}</span>
         </h1>
     </div>
     
