@@ -1,0 +1,18 @@
+@use "../abstract/" as *;
+
+
+body{
+    margin: 0;
+}
+
+#header {
+    background-color: $green;
+    height: 150px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
