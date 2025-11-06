@@ -1,4 +1,5 @@
 <script setup>
+
 import { ref, watch } from "vue";
 import { fetchMeteo } from "./services/meteo.js";
 
@@ -27,11 +28,11 @@ async function chargerMeteo() {
   } finally {
     loading.value = false;
   }
-}
-
+} 
 chargerMeteo();
-watch(ville, chargerMeteo);
+watch(ville, chargerMeteo)
 </script>
+
 
 <template>
   <header id="header">
@@ -45,7 +46,7 @@ watch(ville, chargerMeteo);
   <div class="app-container">
     <div class="banner">
         <h1>
-            <span class="title">Bordeaux</span>
+            <span class="title">{{ ville.charAt(0).toUpperCase() + ville.slice(1) }}</span>
         </h1>
     </div>
     
@@ -65,11 +66,7 @@ watch(ville, chargerMeteo);
       <div v-else-if="error" class="alert error"> Erreur : {{ error }}</div>
       
       <div v-else-if="meteo">
-        <div class="current">
-          <h2 class="city-banner">{{ meteo.city }}</h2>
-          <p>{{ meteo.current.condition }} — {{ meteo.current.tmp }}°C</p>
-          <img :src="meteo.current.icon" alt="meteo actuelle" width="64" height="64" />
-        </div>
+        
         
         <section class="forecast">
           <div v-for="j in meteo.days" :key="j.day_long" class="day-card">
@@ -92,7 +89,7 @@ watch(ville, chargerMeteo);
         </ul>
       </div>
       <div class="logo-bas">
-        <a href="#"><img class="logo-footer" src="/public/img/logo_climato.webp" alt=""></a>
+        <a href="#"><img class="logo-footer" src="/img/logo_climato.webp" alt=""></a>
       </div>
   </footer>
 </template>
