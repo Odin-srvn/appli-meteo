@@ -5,7 +5,9 @@
     a {
         text-decoration: none;
         color: $text-color-footer;
+        
     }
+    @include font-config($text-footer);
     display: flex;
     justify-content: space-between;
     background-color: $green;
@@ -33,5 +35,4 @@
     display: flex;
     gap: 20px;
     list-style-type: none;
-    font-size: map.get($text-footer, size);
 }
