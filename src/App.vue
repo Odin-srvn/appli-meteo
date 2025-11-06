@@ -65,11 +65,7 @@ watch(ville, chargerMeteo)
       <div v-else-if="error" class="alert error"> Erreur : {{ error }}</div>
       
       <div v-else-if="meteo">
-        <div class="current">
-          <h2 class="city-banner">{{ meteo.city }}</h2>
-          <p>{{ meteo.current.condition }} — {{ meteo.current.tmp }}°C</p>
-          <img :src="meteo.current.icon" alt="meteo actuelle" width="64" height="64" />
-        </div>
+        
         
         <section class="forecast">
           <div v-for="j in meteo.days" :key="j.day_long" class="day-card">

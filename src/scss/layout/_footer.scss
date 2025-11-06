@@ -5,6 +5,9 @@
     a {
         text-decoration: none;
         color: $text-color-footer;
+        &:hover{
+            text-decoration: underline;
+        }
         
     }
     @include font-config($text-footer);
@@ -36,3 +39,11 @@
     gap: 20px;
     list-style-type: none;
 }
+
+
+@media (max-width: 480px) {
+    a{
+        font-size: medium;
+    }
+
+    }

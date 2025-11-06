@@ -3,13 +3,13 @@
 
 
 
-#main{
-    background-color: #FEFCF6;
-}
+
 .forecast {
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-bottom: 100px ;
+    margin-top: 30px;
 
 
     .day-card {
