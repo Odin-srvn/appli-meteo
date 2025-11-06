@@ -16,6 +16,58 @@
   color: blue;
 }
 
+#footer a {
+  text-decoration: none;
+  color: #FDF6E6;
+}
+#footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #335A52;
+  height: 114px;
+  align-items: center;
+}
+
+.pages {
+  height: 114px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-bas {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.logo-footer {
+  height: 65px;
+  width: 65px;
+}
+
+.liste ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+}
+
+#header {
+  background-color: #335A52;
+  height: 150px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
 body {
   padding-bottom: 0;
 }
