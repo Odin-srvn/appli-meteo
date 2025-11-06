@@ -2,7 +2,10 @@
 @use "../abstract" as *;
 
 
-
+#main{
+    background-color: $background-color
+   
+}
 
 .forecast {
     display: flex;
