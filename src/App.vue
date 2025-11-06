@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { fetchMeteo } from "./services/meteo.js";
 
 
@@ -28,7 +28,10 @@ async function chargerMeteo() {
     loading.value = false;
   }
 }
+chargerMeteo();
+watch(ville, chargerMeteo)
 </script>
+
 
 <template>
   <header id="header">
@@ -89,7 +92,7 @@ async function chargerMeteo() {
         </ul>
       </div>
       <div class="logo-bas">
-        <a href="#"><img class="logo-footer" src="/public/img/logo_climato.webp" alt=""></a>
+        <a href="#"><img class="logo-footer" src="/img/logo_climato.webp" alt=""></a>
       </div>
   </footer>
 </template>

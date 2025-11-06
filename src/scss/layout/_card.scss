@@ -1,6 +1,11 @@
 @use "sass:map";
 @use "../abstract" as *;
 
+
+
+#main{
+    background-color: #FEFCF6;
+}
 .forecast {
     display: flex;
     justify-content: center;
