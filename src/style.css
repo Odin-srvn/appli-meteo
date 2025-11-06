@@ -24,8 +24,74 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.banner {
-  color: blue;
+h1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin: 0;
+  background-image: url("../../../public/img/bordeaux_banner.jpg");
+  background-size: 110%;
+  background-position: 25% 40%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+h1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 0;
+}
+h1 .title {
+  position: relative;
+  z-index: 1;
+  font-weight: 525;
+  font-size: 32px;
+  color: #10242C;
+}
+
+.meteo-form {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #FEFCF6;
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-size: 28px;
+  color: #10242C;
+}
+.meteo-form .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+.meteo-form select {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #F0FAFE;
+  color: #10242C;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%2310242C' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 0.8rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+.meteo-form select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(51, 90, 82, 0.3);
 }
 
 #footer a {
@@ -87,6 +153,10 @@ body {
 
 .btn {
   background-color: #000000;
+}
+
+.lol {
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
