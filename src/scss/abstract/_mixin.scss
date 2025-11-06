@@ -2,7 +2,7 @@
 
 @mixin font-config($m) {
   font-size: map.get($m, size);
-  font-family: map.get($m, family);
+  font-family: map.get($m, font-family);
   color: map.get($m, color);
 }
 
