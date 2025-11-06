@@ -32,15 +32,20 @@ async function chargerMeteo() {
 
 <template>
   <div class="app-container">
-    <h1 >🌦️ Météo — Gironde</h1>
+    <div class="banner">
+        <h1>
+            <span class="title">Bordeaux</span>
+        </h1>
+    </div>
+    
 
     <form class="meteo-form" @submit.prevent>
-      <label for="ville">Choisir une ville :</label>
+      <label for="ville">Choisir une ville </label>
       <div class="form-group">
         <select id="ville" v-model="ville">
           <option v-for="v in villes" :key="v.code" :value="v.code">{{ v.nom }}</option>
         </select>
-        <button type="button" @click="chargerMeteo">Charger</button>
+        
       </div>
     </form>
 
