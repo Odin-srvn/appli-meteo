@@ -1,15 +1,35 @@
+/* === BASE TYPO === */
 @use "../abstract" as *;
+/* === FONTS (déclarées depuis /public) === */
+/* Avec Vite, /public est servi à la racine → /css/font/... */
 
 @font-face {
-    font-family: Montserrat;
-    src: url(/public/css/font/Montserrat-VariableFont_wght.ttf);
+  font-family: "Instrument Sans";
+  src: url("/css/font/InstrumentSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900; /* variable font : plage complète */
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: Instrument;
-    src: url(/public/css/font/InstrumentSans-VariableFont_wdth\,wght.ttf);
+  font-family: "Montserrat";
+  src: url("/css/font/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
-.city-banner {
-    @include font-config($city-banner);
+
+
+:root {
+  /* Optionnel : tu peux définir une taille base si tu veux travailler en rem */
+  /* font-size: 16px; */
+}
+
+html, body {
+  /* Base sans serif pour éviter le fallback Times */
+  font-family: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

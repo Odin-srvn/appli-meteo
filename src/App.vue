@@ -44,7 +44,7 @@ async function chargerMeteo() {
       </div>
     </form>
 
-    <div class="mt-4">
+    <div class="">
       <div v-if="loading" class="alert info"> Chargement...</div>
       <div v-else-if="error" class="alert error"> Erreur : {{ error }}</div>
 
@@ -59,11 +59,12 @@ async function chargerMeteo() {
           <div v-for="j in meteo.days" :key="j.day_long" class="day-card">
               <h5>{{ j.day_long }}</h5>
               <img :src="j.icon" :alt="j.condition" width="64" height="64" />
-              <p>{{ j.tmin }}°C / {{ j.tmax }}°C</p>
+              <p class="temp">{{ j.tmin }}°C / {{ j.tmax }}°C</p>
              <p class="condition">{{ j.condition }}</p>
           </div>
         </section>
       </div>
     </div>
   </div>
+  
 </template>
