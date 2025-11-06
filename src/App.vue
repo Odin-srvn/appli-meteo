@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { fetchMeteo } from "./services/meteo.js";
 
 
@@ -28,6 +28,9 @@ async function chargerMeteo() {
     loading.value = false;
   }
 }
+
+chargerMeteo();
+watch(ville, chargerMeteo);
 </script>
 
 <template>
@@ -40,19 +43,24 @@ async function chargerMeteo() {
 <main id="main">
 
   <div class="app-container">
-    <h1 >🌦️ Météo — Gironde</h1>
+    <div class="banner">
+        <h1>
+            <span class="title">Bordeaux</span>
+        </h1>
+    </div>
     
+
     <form class="meteo-form" @submit.prevent>
-      <label for="ville">Choisir une ville :</label>
+      <label for="ville">Choisir une ville </label>
       <div class="form-group">
         <select id="ville" v-model="ville">
           <option v-for="v in villes" :key="v.code" :value="v.code">{{ v.nom }}</option>
         </select>
-        <button type="button" @click="chargerMeteo">Charger</button>
+        
       </div>
     </form>
-    
-    <div class="mt-4">
+
+    <div class="">
       <div v-if="loading" class="alert info"> Chargement...</div>
       <div v-else-if="error" class="alert error"> Erreur : {{ error }}</div>
       
@@ -65,10 +73,10 @@ async function chargerMeteo() {
         
         <section class="forecast">
           <div v-for="j in meteo.days" :key="j.day_long" class="day-card">
-            <h5>{{ j.day_long }}</h5>
-            <img :src="j.icon" :alt="j.condition" width="64" height="64" />
-            <p>{{ j.tmin }}°C / {{ j.tmax }}°C</p>
-            <p class="condition">{{ j.condition }}</p>
+              <h5>{{ j.day_long }}</h5>
+              <img :src="j.icon" :alt="j.condition" width="64" height="64" />
+              <p class="temp">{{ j.tmin }}°C / {{ j.tmax }}°C</p>
+             <p class="condition">{{ j.condition }}</p>
           </div>
         </section>
       </div>

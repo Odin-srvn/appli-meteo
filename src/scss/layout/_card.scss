@@ -1,0 +1,108 @@
+@use "sass:map";
+@use "../abstract" as *;
+
+.forecast {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+
+    .day-card {
+
+        width: 450px;
+        height: 300px;
+        border-radius: 6px;
+        background-color: $card;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+        box-shadow: 0px 1px 1.5px;
+        color: $text-color;
+
+        img {
+            align-self: center;
+
+            &:hover {
+                transform: scale(1.07);
+            }
+        }
+
+        h5 {
+            @include font-config($day);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .temp {
+            @include font-config($weather);
+            margin-top: 40px;
+            margin-bottom: 10px
+        }
+
+        .condition {
+            @include font-config($weather);
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+    }
+
+    
+}
+@media (max-width: 1024px) {
+    .forecast {
+        gap: 20px;
+    }
+
+    .day-card {
+        width: 380px;
+        height: 260px;
+        padding: 16px;
+
+        img{
+            width: 70px;
+        }
+    }
+}
+
+/* Tablette portrait et mobile large */
+@media (max-width: 768px) {
+    .forecast {
+        flex-wrap: wrap;
+        /* autorise le retour à la ligne */
+        justify-content: center;
+    }
+
+    .day-card {
+        width: 100%;
+        max-width: 420px;
+        /* garde une largeur confortable */
+        height: auto;
+        /* laisse le contenu respirer */
+        padding: 16px;
+
+        img {
+            width: 64px;
+        }
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .forecast {
+        gap: 16px;
+    }
+
+    .day-card {
+        max-width: 360px;
+        padding: 14px;
+        border-radius: 10px;
+
+        img {
+            width: 56px;
+        }
+    }
+}

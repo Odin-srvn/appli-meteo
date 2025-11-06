@@ -1,10 +1,13 @@
 @use "abstract" as *;
 @use "base" as *;
 @use "layout" as *;
-
+@use "pages" as *;
 body{
     padding-bottom: 0;
 }
 .btn{
     background-color: #000000;
+}
+.lol{
+    color: red;
 }
