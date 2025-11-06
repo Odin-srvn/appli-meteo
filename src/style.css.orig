@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/* === BASE TYPO === */
+/* === FONTS (déclarées depuis /public) === */
+/* Avec Vite, /public est servi à la racine → /css/font/... */
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("/css/font/InstrumentSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900; /* variable font : plage complète */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/css/font/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+html, body {
+  /* Base sans serif pour éviter le fallback Times */
+  font-family: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.banner {
+  color: blue;
+}
+
+#footer a {
+  text-decoration: none;
+  color: #FDF6E6;
+}
+#footer {
+  font-size: 20px;
+  color: #FDF6E6;
+  display: flex;
+  justify-content: space-between;
+  background-color: #335A52;
+  height: 114px;
+  align-items: center;
+}
+
+.pages {
+  height: 114px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-bas {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.logo-footer {
+  height: 65px;
+  width: 65px;
+}
+
+.liste ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+body {
+  margin: 0;
+}
+
+#header {
+  background-color: #335A52;
+  height: 150px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+body {
+  padding-bottom: 0;
+}
+
+.btn {
+  background-color: #000000;
+}
+
+/*# sourceMappingURL=style.css.map */
