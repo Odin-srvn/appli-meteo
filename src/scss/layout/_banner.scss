@@ -20,15 +20,7 @@ h1{
     color: map.get($city-banner, color);
   }
   
-.banner.libourne {
-  background-position: center 50%;
-  background-size: 100%;
-}
 
-.banner.blaye{
-  background-position: center 50%;
-  background-size: 100%;
-}
 
 .banner {
   position: relative;
@@ -36,8 +28,6 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: 110%;
-  background-position: 25% 40%;
   background-repeat: no-repeat;
   overflow: hidden;
   transition: background-image 0.6s ease-in-out;
