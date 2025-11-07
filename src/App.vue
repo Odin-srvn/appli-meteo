@@ -1,21 +1,20 @@
 <script setup>
-import { ref, watch, computed } from "vue";
+import { ref, watch, onMounted } from "vue";
 import { fetchMeteo } from "./services/meteo.js";
-import { Resultat } from "./components/Resultat.vue";
-import { RouterView } from "vue-router";
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Banner from "./components/Banner.vue";
+import Card from "./components/Card.vue";
 
 
 const villes = [
-  { code: "bordeaux", nom: "Bordeaux", image: "/img/bordeaux_banner.jpg" },
-  { code: "arcachon", nom: "Arcachon", image: "/img/arcachon_banner.jpg"},
-  { code: "libourne", nom: "Libourne", image: "/img/libourne_banner.webp" },
-  { code: "blaye", nom: "Blaye", image: "/img/blaye_banner.webp"  },
+  { code: "bordeaux", nom: "Bordeaux", image: "/img/bordeaux_banner.jpg", position: "25% 40%" , size: "110%" },
+  { code: "arcachon", nom: "Arcachon", image: "/img/arcachon_banner.jpg", position: "25% 40%" , size: "100%"},
+  { code: "libourne", nom: "Libourne", image: "/img/libourne_banner.webp", position: "center 50%" , size: "100%"},
+  { code: "blaye", nom: "Blaye", image: "/img/blaye_banner.webp", position: "center 50%" , size: "100%"  },
 ];
 
-const imageVille = computed(() => {
-  const current = villes.find(v => v.code === ville.value);
-  return current ? current.image : "/img/default_banner.jpg";
-});
+
 
 const ville = ref("bordeaux");
 const meteo = ref(null);
@@ -43,55 +42,23 @@ onMounted(async () => {
 
 
 <template>
-  <header id="header">
-    <div class="logo">
-      <a href="#"><img src="/img/logo_climato.webp" class="logo-header" alt=""></a>
-    </div>
-  </header>
+ <Header />
 
   <main id="main">
+    <Banner
+  :villes="villes"
+  v-model:ville="ville"
+  :loading="loading"
+  :error="error"
+  :meteo="meteo"
+/>
 
-  <div class="app-container">
-    <div class="banner"
-    :class="ville"
-    :style="{
-    backgroundImage: `url(${imageVille})`,
-  }">
-        <h1>
-          <span class="title">{{ ville.charAt(0).toUpperCase() + ville.slice(1) }}</span>
-        </h1>
-      </div>
-
-
-      <form class="meteo-form" @submit.prevent>
-        <label for="ville">Choisir une ville </label>
-        <div class="form-group">
-          <select id="ville" v-model="ville">
-            <option v-for="v in villes" :key="v.code" :value="v.code">{{ v.nom }}</option>
-          </select>
-
-        </div>
-      </form>
-      <div class="">
-        <div v-if="loading" class="alert info"> Chargement...</div>
-        <div v-else-if="error" class="alert error"> Erreur : {{ error }}</div>
-
-        <div v-else-if="meteo">
-        </div>
-      </div>
-      </div>
+  <Card :meteo="meteo" />
+        
+        
+        
+       
   </main>
-
-
-  <footer id="footer">
-    <div class="liste">
-      <ul>
-        <router-link to="/about">A Propos</router-link>
-        <router-link to="/mentions">Mentions</router-link>
-      </ul>
-    </div>
-    <div class="logo-bas">
-      <a href="#"><img class="logo-footer" src="/img/logo_climato.webp" alt=""></a>
-    </div>
-  </footer>
+<Footer />
+  
 </template>
