@@ -57,8 +57,8 @@ onMounted(async () => {
         
         
         
-       
+     
   </main>
-<Footer />
+  <Footer />
   
 </template>
