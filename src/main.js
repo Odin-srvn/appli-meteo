@@ -9,4 +9,3 @@ import '@/scss/style.scss';
 createApp(App)
   .use(router) 
   .mount('#app')
-
