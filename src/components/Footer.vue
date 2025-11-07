@@ -1,8 +1,13 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router';
+
+</script>
+
 <template>
     <footer id="footer">
         <div class="liste">
             <ul>
-                <li><a href="">A Propos</a></li>
+                <li><RouterLink to="/about">A Propos </RouterLink></li>
                 <li><a href="">Mentions Légales</a></li>
             </ul>
         </div>
@@ -11,3 +16,4 @@
       </div>
     </footer>
 </template>
+

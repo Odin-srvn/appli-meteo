@@ -1,4 +1,5 @@
 <script setup>
+import { RouterView } from 'vue-router';
 import { ref, watch, onMounted } from "vue";
 import { fetchMeteo } from "./services/meteo.js";
 import Header from "./components/Header.vue";
@@ -45,6 +46,7 @@ onMounted(async () => {
  <Header />
 
   <main id="main">
+    <RouterView />
     <Banner
   :villes="villes"
   v-model:ville="ville"
@@ -53,10 +55,7 @@ onMounted(async () => {
   :meteo="meteo"
 />
 
-  <Card :meteo="meteo" />
-        
-        
-        
+  <Card :meteo="meteo" /> 
      
   </main>
   <Footer />
