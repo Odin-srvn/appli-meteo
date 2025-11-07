@@ -8,7 +8,8 @@ import { RouterLink } from 'vue-router';
         <div class="liste">
             <ul>
                 <li><RouterLink to="/about">A Propos </RouterLink></li>
-                <li><a href="">Mentions Légales</a></li>
+                <li><RouterLink to="/mentions">Mentions Légales</RouterLink></li>
+
             </ul>
         </div>
       <div class="logo-bas">

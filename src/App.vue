@@ -47,15 +47,6 @@ onMounted(async () => {
 
   <main id="main">
     <RouterView />
-    <Banner
-  :villes="villes"
-  v-model:ville="ville"
-  :loading="loading"
-  :error="error"
-  :meteo="meteo"
-/>
-
-  <Card :meteo="meteo" /> 
      
   </main>
   <Footer />
