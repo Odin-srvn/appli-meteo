@@ -4,8 +4,6 @@ import { ref, watch, onMounted } from "vue";
 import { fetchMeteo } from "./services/meteo.js";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import Banner from "./components/Banner.vue";
-import Card from "./components/Card.vue";
 
 
 const villes = [
@@ -47,15 +45,7 @@ onMounted(async () => {
 
   <main id="main">
     <RouterView />
-    <Banner
-  :villes="villes"
-  v-model:ville="ville"
-  :loading="loading"
-  :error="error"
-  :meteo="meteo"
-/>
-
-  <Card :meteo="meteo" /> 
+    
      
   </main>
   <Footer />
