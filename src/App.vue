@@ -1,6 +1,8 @@
 <script setup>
 import { ref, watch, onMounted } from "vue";
 import { fetchMeteo } from "./services/meteo.js";
+import { Resultat } from "./components/Resultat.vue";
+import { RouterView } from "vue-router";
 
 
 const villes = [
@@ -48,7 +50,7 @@ onMounted(async () => {
     <div class="app-container">
       <div class="banner">
         <h1>
-            <span class="title">{{ ville.charAt(0).toUpperCase() + ville.slice(1) }}</span>
+          <span class="title">{{ ville.charAt(0).toUpperCase() + ville.slice(1) }}</span>
         </h1>
       </div>
 
@@ -62,36 +64,26 @@ onMounted(async () => {
 
         </div>
       </form>
+      <div class="">
+        <div v-if="loading" class="alert info"> Chargement...</div>
+        <div v-else-if="error" class="alert error"> Erreur : {{ error }}</div>
 
-    <div class="">
-      <div v-if="loading" class="alert info"> Chargement...</div>
-      <div v-else-if="error" class="alert error"> Erreur : {{ error }}</div>
-      
-      <div v-else-if="meteo">
-        
-        
-        <section class="forecast">
-          <div v-for="j in meteo.days" :key="j.day_long" class="day-card">
-              <h5>{{ j.day_long }}</h5>
-              <img :src="j.icon" :alt="j.condition" width="64" height="64" />
-              <p class="temp">{{ j.tmin }}°C / {{ j.tmax }}°C</p>
-              <p class="condition">{{ j.condition }}</p>
-            </div>
-          </section>
+        <div v-else-if="meteo">
         </div>
       </div>
-    </div>
+      </div>
   </main>
 
+
   <footer id="footer">
-      <div class="liste">
-        <ul>
-          <li><a href="">A Propos</a></li>
-          <li><a href="">Mentions Légales</a></li>
-        </ul>
-      </div>
-      <div class="logo-bas">
-        <a href="#"><img class="logo-footer" src="/img/logo_climato.webp" alt=""></a>
-      </div>
+    <div class="liste">
+      <ul>
+        <router-link to="/about">A Propos</router-link>
+        <router-link to="/mentions">Mentions</router-link>
+      </ul>
+    </div>
+    <div class="logo-bas">
+      <a href="#"><img class="logo-footer" src="/img/logo_climato.webp" alt=""></a>
+    </div>
   </footer>
 </template>
